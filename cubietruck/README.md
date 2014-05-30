@@ -95,6 +95,11 @@ __Hinweis__: Dies habe ich noch nie gebraucht. Falls doch, das is zu tun
 - `snyc`
 - `reboot`
 
+### Elasticsearch installieren
+__Hinweis__: Um ES nutzen zu können muss man erst Java installieren
+
+- `wget https://download.elasticsearch.org/elasticsearch/elasticsearch/elasticsearch-1.1.1.deb` zunächst runterladen - auf die Version achten
+- `sudo dpkg -i elasticsearch-1.1.1.deb` und schon ist das Teil installiert
 
 
 `apt-get clean` immer schön sauber halten
