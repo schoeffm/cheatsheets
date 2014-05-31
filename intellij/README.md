@@ -6,11 +6,11 @@ __⌘__ = Cmd; __⌥__ = Alt; __⇧__ = Shift; __⌃__ = Ctrl  <br/>
 <table>
     <tr>
         <td>⇧ ⌘ F12</td>
-        <td>maximize editor-window</td>
+        <td>maximize editor-window <a href="videos/intellij_maximize_editor.mp4">show me</a></td>
     </tr>
     <tr>
         <td>⇧ F4</td>
-        <td>release the editor-window (in order to move the window to a second screen)</td>
+        <td>release the editor-window (in order to move the window to a second screen) <a href="videos/intellij_release_window.mp4";>show me</a></td>
     </tr>
 </table>
 
@@ -42,11 +42,11 @@ __⌘__ = Cmd; __⌥__ = Alt; __⇧__ = Shift; __⌃__ = Ctrl  <br/>
 <table>
 	<tr>
 		<td>⌥ G</td>
-		<td>select next occurence of word (useful for multi-carret editing) </td>
+		<td>select next occurence of word (useful for multi-carret editing) <a href="videos/intellij_multi_select.mp4";>show me</a></td>
 	</tr>
 	<tr>
 		<td>⌥ ⌘ L</td>
-		<td>Reformat code (optimize Imports as well etc.)</td>
+		<td>Reformat code (optimize Imports as well etc.) <a href="videos/intellij_reformat_code.mp4";>show me</a></td>
 	</tr>
     <tr>
         <td>⇧ ⌥ ⌘ T</td>
@@ -54,11 +54,11 @@ __⌘__ = Cmd; __⌥__ = Alt; __⇧__ = Shift; __⌃__ = Ctrl  <br/>
     </tr>
     <tr>
         <td>⇧ ⌘ T</td>
-        <td>Choose (and subsequently jump to) test for this class (or create one)</td>
+        <td>Choose (and subsequently jump to) test for this class (or create one) <a href="videos/intellij_jump2test.mp4";>show me</a></td>
     </tr>
     <tr>
         <td>⇧ ⌃ J</td>
-        <td>Join lines (same as ⌃ J in vi)</td>
+        <td>Join lines (same as ⌃ J in vi) <a href="videos/intellij_join_lines.mp4";>show me</a></td>
     </tr>
     <tr>
         <td>⇧ ⌃ U</td>
@@ -70,7 +70,7 @@ __⌘__ = Cmd; __⌥__ = Alt; __⇧__ = Shift; __⌃__ = Ctrl  <br/>
 <table>
     <tr>
         <td>move right</td>
-        <td>Splits the screen and moves the current editor-window to the right (if there are more than one tab)</td>
+        <td>Splits the screen and moves the current editor-window to the right (if there are more than one tab) <a href="videos/intellij_move_right.mp4";>show me</a></td>
     </tr>
     <tr>
         <td>column selection mode</td>
