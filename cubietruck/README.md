@@ -101,6 +101,11 @@ __Hinweis__: Um ES nutzen zu können muss man erst Java installieren
 - `wget https://download.elasticsearch.org/elasticsearch/elasticsearch/elasticsearch-1.1.1.deb` zunächst runterladen - auf die Version achten
 - `sudo dpkg -i elasticsearch-1.1.1.deb` und schon ist das Teil installiert
 
+### SD Card als Zusatz-Speicher
+- `sudo fdisk -l` lists the current partition table (look for something called `mmcblk0`
+- `mount -t vfat -ouser,umask=0000 /dev/mmcblk0 /media/card` mounts the sd-card to the given mount-point under `/media/card`
+- Besser ist es allerdings, sollte die Karte dauerhaft im Truck bleiben, diese in die `fstab` einzutragen und sie somit automatisch zu mounten
+        `/dev/mmcblk0   /media/card    auto    user,noatime,umask=0000   0   0`
 
 `apt-get clean` immer schön sauber halten
 
