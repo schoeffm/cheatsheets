@@ -2,10 +2,6 @@
 
 __⌘__ = Cmd; __⌥__ = Alt; __⇧__ = Shift; __⌃__ = Ctrl  <br/>
 
-https://www.dropbox.com/sh/s3xk7vu33s6kwns/AAD1U5KqFag0QUOZH8GONygga
-
-https://www.dropbox.com/sh/s3xk7vu33s6kwns/AAA3K-cfbcMZ5q0EmZrue7fGa/intellij?lst#lh:null-intellij_release_window.mp4.mp4
-
 ### View / Windows 
 <table>
     <tr>
