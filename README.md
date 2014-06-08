@@ -1,4 +1,3 @@
-cheatsheets
-===========
+# cheatsheets
 
-A bunch of cheetsheets and how-tis
+A bunch of cheetsheets and how-to's
