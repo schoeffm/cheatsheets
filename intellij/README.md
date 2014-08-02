@@ -17,6 +17,10 @@ __⌘__ = Cmd; __⌥__ = Alt; __⇧__ = Shift; __⌃__ = Ctrl  <br/>
 ### Navigation
 <table>
 	<tr>
+		<td>⌘ ⇧ ENTER</td>
+		<td>Complete Current Statement - moves the cursor into the brakets of the current stetement</td>
+	</tr>
+	<tr>
 		<td>F2 / ⇧+F2</td>
 		<td>jump to the next / preview error (or warning - depends, click at the right yellow/red square to adjust)</td>
 	</tr>
@@ -40,6 +44,14 @@ __⌘__ = Cmd; __⌥__ = Alt; __⇧__ = Shift; __⌃__ = Ctrl  <br/>
 
 ### Code / Refactorings
 <table>
+	<tr>
+		<td>⌘ ⌥ M</td>
+		<td>Extract into Method - the current selected Code will be encapsulated into a method</td>
+	</tr>
+	<tr>
+		<td>⌘ ⌥ V</td>
+		<td>introduce variable - this also works with new-declarations (i.e. new ArrayList<String>() - ⌘ ⌥ V)</td>
+	</tr>
 	<tr>
 		<td>⌥ G</td>
 		<td>select next occurence of word (useful for multi-carret editing) <a href="https://www.dropbox.com/sh/s3xk7vu33s6kwns/AAA3K-cfbcMZ5q0EmZrue7fGa/intellij?lst#lh:null-intellij_multi_select.mp4";>show me</a></td>
