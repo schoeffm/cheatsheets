@@ -109,7 +109,14 @@ __Hinweis__: Um ES nutzen zu können muss man erst Java installieren
 
 `apt-get clean` immer schön sauber halten
 
+### SD Card-Backup dauert ewig
+Mit dem in allen Raspberry-Foren gezeigten `dd`-Befehl für Mac könnte man schier verzweifeln. Mit meiner 16GB
+SD-Card kann man nicht auf das Ergebnis warten - über eine Stunde pro GB!! Stellt sich heraus, dass dies kein Problem ist, das nur ich habe, sondern gemein hin beim Mac so ist. Umgehen kann man das Ganze, indem man nicht den Disk-Device dupliziert, sondern die Raw-Variante davon (die eine verbesserte R/W-Performance bietet):
+
+	# /dev/rdiskX anstelle von /dev/diskX
+	sudo dd bs=1m if=~/2013-10-09.backup.img if=/dev/rdisk3  
 
 [livesuit]: http://ubuntuone.com/7GLnElgM41yoGLZfRKxXzk
 [lubunto_server]: http://docs.cubieboard.org/tutorials/a20-cubietruck_lubuntu_server_releases 
 [lubunto_desktop]: http://docs.cubieboard.org/tutorials/a20-cubietruck_lubuntu_desktop_releases
+[dd_on_mac]:http://daoyuan.li/solution-dd-too-slow-on-mac-os-x/
