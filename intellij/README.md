@@ -70,7 +70,7 @@ __⌘__ = Cmd; __⌥__ = Alt; __⇧__ = Shift; __⌃__ = Ctrl  <br/>
     </tr>
     <tr>
         <td>⇧ ⌃ J</td>
-        <td>Join lines (same as ⌃ J in vi) <a href="https://www.dropbox.com/sh/s3xk7vu33s6kwns/AAA3K-cfbcMZ5q0EmZrue7fGa/intellij?lst#lh:null-intellij_join_lines.mp4";>show me</a></td>
+        <td>Join lines (same as ⌃ J in vi) <a href="https://www.youtube.com/watch_popup?v=Z96eemZwBbg";>show me</a></td>
     </tr>
     <tr>
         <td>⇧ ⌃ U</td>
