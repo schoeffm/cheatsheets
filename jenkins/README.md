@@ -45,7 +45,7 @@ Now everything should be in place to start testing - let's make a simple manuel 
 We need a bunch of plugins in order to leverage the installed tools - so lets start.
 
 - [Xvfb][xvfb] in order to start/stop X11 environments per job (and parametrize 'em). Just give your installation a name (to recognize it later). That should be enough as long as `xvfb` is in the PATH 
-![System Settings for Xvfb-Plugin](assets/img/system_xvfb.png =650x)
+![System Settings for Xvfb-Plugin](/jenkins/assets/img/system_xvfb.png?raw=true =650x)
 
 - [Environment Injector Plugin][envInject] in order to set environment-variables for a specific build job (beware - they are environment-wide). There are no system-specific settings here, only job-related ones (we'll see later)
 
@@ -54,7 +54,7 @@ We need a bunch of plugins in order to leverage the installed tools - so lets st
 Now since everything is setup - create an actual build-job and set it up like that:
 
 - In the header of the job-configuration mark to remove old job-results
-![Environment Varialbes set for this job](assets/img/job_environment.png =650x)
+![Environment Varialbes set for this job](/jenkins/assets/img/job_environment.png?raw=true =650x)
 
 - Now the Xvfb-configuration - mark _Start xvfb ..._ and click _Advanced_ in order to set 
   more stuff. Since we've set the `DISPLAY`-variable to `:99` we use this as the 
@@ -66,12 +66,12 @@ Now since everything is setup - create an actual build-job and set it up like th
   widgetset the first step is to compile that widgetset. Next compile everything else (the
   Java- and Groovy-stuff) and finally we'll execute __all__ tests (if you're only interested 
   in i.e. UI-tests then write `test-app functions:`)
-![Grails build execution step](assets/img/job_grails.png =650x)
+![Grails build execution step](/jenkins/assets/img/job_grails.png?raw=true =650x)
 
 - Finally, although this is not a geb- or grails-specific step, you should publish the 
   test results (in order to get a nice overview about how many and what kind of tests failed
   during a run).
-![Publish test results](assets/img/job_junit.png =650x)
+![Publish test results](/jenkis/assets/img/job_junit.png?raw=true =650x)
 
 Now that's it - run the job and see if tests fail.
 
@@ -79,13 +79,13 @@ Now that's it - run the job and see if tests fail.
 
 If you'd like to visualize a Build-Pipeline install the [respective plugin][buildPipe] and create a new View by clickin' the `+`-Sign at the tabbar.
 
-![Create a new Pipeline-View](assets/img/build_pipe.png =300x)
+![Create a new Pipeline-View](/jenkins/assets/img/build_pipe.png?raw=true =300x)
 
 Now, just enter a name, the job to start the pipeline (_other jobs will be determined 
 automatically, as long as they are connected to the predecessor-job as their trigger_). For
 all other configurations follow your instinct (and read the help-entries).
 
-![Create a new Pipeline-View](assets/img/build_pipe_config.png =600x)
+![Create a new Pipeline-View](/jenkins/assets/img/build_pipe_config.png?raw=true =600x)
 
 
 [xvfb]:https://wiki.jenkins-ci.org/display/JENKINS/Xvfb+Plugin

@@ -101,20 +101,38 @@ __Hinweis__: Um ES nutzen zu können muss man erst Java installieren
 - `wget https://download.elasticsearch.org/elasticsearch/elasticsearch/elasticsearch-1.1.1.deb` zunächst runterladen - auf die Version achten
 - `sudo dpkg -i elasticsearch-1.1.1.deb` und schon ist das Teil installiert
 
-### SD Card als Zusatz-Speicher
+### SD-Karte
+
+#### SD Card als Zusatz-Speicher
 - `sudo fdisk -l` lists the current partition table (look for something called `mmcblk0`
-- `mount -t vfat -ouser,umask=0000 /dev/mmcblk0 /media/card` mounts the sd-card to the given mount-point under `/media/card`
-- Besser ist es allerdings, sollte die Karte dauerhaft im Truck bleiben, diese in die `fstab` einzutragen und sie somit automatisch zu mounten
-        `/dev/mmcblk0   /media/card    auto    user,noatime,umask=0000   0   0`
+- `mount -t vfat -ouser,umask=0000 /dev/mmcblk0 /media/card` mounts the sd-card to the 
+  given mount-point under `/media/card`
+- Besser ist es allerdings, sollte die Karte dauerhaft im Truck bleiben, diese 
+  in die `fstab` einzutragen und sie somit automatisch zu mounten 
+  `/dev/mmcblk0   /media/card    auto    user,noatime,umask=0000   0   0`
 
 `apt-get clean` immer schön sauber halten
 
-### SD Card-Backup dauert ewig
-Mit dem in allen Raspberry-Foren gezeigten `dd`-Befehl für Mac könnte man schier verzweifeln. Mit meiner 16GB
-SD-Card kann man nicht auf das Ergebnis warten - über eine Stunde pro GB!! Stellt sich heraus, dass dies kein Problem ist, das nur ich habe, sondern gemein hin beim Mac so ist. Umgehen kann man das Ganze, indem man nicht den Disk-Device dupliziert, sondern die Raw-Variante davon (die eine verbesserte R/W-Performance bietet):
+#### SD Card-Backup dauert ewig
+Mit dem in allen Raspberry-Foren gezeigten `dd`-Befehl für Mac könnte man schier verzweifeln. 
+Mit meiner 16GB SD-Card kann man nicht auf das Ergebnis warten - über eine Stunde pro GB!! 
+Stellt sich heraus, dass dies kein Problem ist, das nur ich habe, sondern gemein hin beim 
+Mac so ist. Umgehen kann man das Ganze, indem man nicht den Disk-Device dupliziert, sondern 
+die Raw-Variante davon (die eine verbesserte R/W-Performance bietet):
 
 	# /dev/rdiskX anstelle von /dev/diskX
 	sudo dd bs=1m if=~/2013-10-09.backup.img if=/dev/rdisk3  
+
+#### Image zurückspielen auf die SD-Karte
+Wichtigster Punkt beim Zurückspielen eines gesicherten Images ist, dass die Karte nicht gemountet sein darf.
+
+	df -h
+	diskutil unmount /dev/disk3s1
+	dd bs=1m if=./backup.img of=/dev/rdisk3
+
+- Mount-Punkt und damit die Karte rausfinden
+- die Karte aushängen
+- das Image kann nun zurückgespielt werden
 
 [livesuit]: http://ubuntuone.com/7GLnElgM41yoGLZfRKxXzk
 [lubunto_server]: http://docs.cubieboard.org/tutorials/a20-cubietruck_lubuntu_server_releases 
