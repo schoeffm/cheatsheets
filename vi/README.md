@@ -18,7 +18,7 @@
 
 ### Editing / Content modification
 - __`i`__ / __`I`__: Insert text at current position / at beginning of line
-- __`a`__ / __`A`__: Append text at current position / at beginning of line
+- __`a`__ / __`A`__: Append text at current position / at end of line
 - __`o`__ / __`O`__: Open new line below/above cursor for new text
 - __`J`__: Join current and next line
 - __`.`__: Repeat last action (__`!`__)
