@@ -60,7 +60,7 @@ Now since everything is setup - create an actual build-job and set it up like th
   more stuff. Since we've set the `DISPLAY`-variable to `:99` we use this as the 
   _display name_ to be used by Xvfb. Give it enough screen-space so everything you'd like to
   see fits the screen. Set the offset- and timeout-values as shown and that's it.
-![Job Settings for Xvfb-Plugin](/assets/img/job_xvfb.png?raw=true =650x)
+![Job Settings for Xvfb-Plugin](/jenkins/assets/img/job_xvfb.png?raw=true =650x)
 
 - Now configure the Gails-Job itself. Since this is a vaadin-application with its own
   widgetset the first step is to compile that widgetset. Next compile everything else (the
