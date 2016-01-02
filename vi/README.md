@@ -90,5 +90,7 @@ _If we want to run a Normal mode command on a series of consecutive lines, we ca
 - __`:%normal A;`__: Appends a semicolone to the end of every line
 - __`:set shiftwidth=4 softtabstop=4 expandtab`__:
 
-
+### Mixed stuff
 - __`vi scp://user:password@host:/path`__: opens a remote file for editing in the locale installation of vi
+- __`:g/search_term/#`__: display each line containing __search_term__ with line numbers
+- __`:r !date`__: will insert the current date/time stamp (more generally the output from the command)
