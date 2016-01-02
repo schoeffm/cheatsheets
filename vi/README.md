@@ -18,7 +18,7 @@
 
 ### Editing / Content modification
 - __`i`__ / __`I`__: Insert text at current position / at beginning of line
-- __`a`__ / __`A`__: Append text at current position / at beginning of line
+- __`a`__ / __`A`__: Append text at current position / at end of line
 - __`o`__ / __`O`__: Open new line below/above cursor for new text
 - __`J`__: Join current and next line
 - __`.`__: Repeat last action (__`!`__)
@@ -90,7 +90,12 @@ _If we want to run a Normal mode command on a series of consecutive lines, we ca
 - __`:%normal A;`__: Appends a semicolone to the end of every line
 - __`:set shiftwidth=4 softtabstop=4 expandtab`__:
 
+<<<<<<< HEAD
 ### Mixed stuff
 - __`vi scp://user:password@host:/path`__: opens a remote file for editing in the locale installation of vi
 - __`:g/search_term/#`__: display each line containing __search_term__ with line numbers
 - __`:r !date`__: will insert the current date/time stamp (more generally the output from the command)
+=======
+
+- __`vi scp://user:password@host:/path`__: opens a remote file for editing in the locale installation of vi
+>>>>>>> 2695d36d5b77071d6a2577a7d273b9c0ce98c1cb
