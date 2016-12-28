@@ -1,13 +1,15 @@
 ## Vim Cheatsheet/
 
 ### Moving the cursor around
-- __`e`__ / __`E`__: To end of word
+- __`gj`__ / __`gk`__: One display line down/up (even when the real line spans several display lines)
+- __`g0`__ / __`g$`__: To start/end of display line 
 - __`w`__ / __`W`__: Forward by word 
 - __`b`__ / __`B`__: Backward by word 
+- __`f{char}`__ /__`,`__ /  __`;`__: Moves the cursor to the first occurence of the given character. If there are more than one matching character in the current line use `,` and `;` to move back and forth
 - __`$`__: To end of line
 - __`0`__: To beginning of line 
-- __`n|`__ Column n of current line
-[Link ins Leere](http://www.golem.de)
+- __`n|`__: Column n of current line
+- __`%`__: Finds the matching parathesis and jump to it (no matter if back or forth)
 
 ### Paging / Scrolling
 - __`^F`__ / __`^D`__: Scroll forward one screen / half screen.
@@ -90,12 +92,10 @@ _If we want to run a Normal mode command on a series of consecutive lines, we ca
 - __`:%normal A;`__: Appends a semicolone to the end of every line
 - __`:set shiftwidth=4 softtabstop=4 expandtab`__:
 
-<<<<<<< HEAD
 ### Mixed stuff
 - __`vi scp://user:password@host:/path`__: opens a remote file for editing in the locale installation of vi
 - __`:g/search_term/#`__: display each line containing __search_term__ with line numbers
 - __`:r !date`__: will insert the current date/time stamp (more generally the output from the command)
-=======
 
-- __`vi scp://user:password@host:/path`__: opens a remote file for editing in the locale installation of vi
->>>>>>> 2695d36d5b77071d6a2577a7d273b9c0ce98c1cb
+
+
