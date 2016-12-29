@@ -54,8 +54,8 @@ Das is lediglich ein Sym-Link im `/etc`-Verzeichnis.
 __Hinweis__: Wegen der Passwort-Eingabe sollte das Keyboard-Layout zuvor
 eingerichtet sein.
 
-- `add user schoeffm` und dann den Anweisungne folgen
-- `add user schoeffm sudo` um auch diesen Nutzer in die Sudoers-Gruppe
+- `adduser schoeffm` und dann den Anweisungne folgen
+- `adduser schoeffm sudo` um auch diesen Nutzer in die Sudoers-Gruppe
   mit aufzunehmen. Damit ist dieser User dann SSH-fertig
 
 ### SSH Server installieren
