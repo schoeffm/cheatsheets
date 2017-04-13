@@ -1,43 +1,56 @@
+## Useful bash tricks
+
+    !!                              # run the last command executed
+    sudo !!                         # run the last command as root
+    !<word>                         # run last command starting with a specific word
+    !<word>:p                       # list, but don't run that last command
+    <space>command                  # execute a command w/out saving in history
+    echo "ls -l" | at midnight      # execut command at given time
+    caffeinate -u -t 3600           # stop your mac from sleeping for 1h
+    ls -lhS                         # sort files by size in a directory
+    qlmanage -p <file>              # QuickLook prview from command-line
+    top -o vsize                    # why is my mac slow? 
+
 ## Quoting your variables with ${}
 
-        mv $MYVAR $MYVAR__bak       # wrong
-        mv $MYVAR ${MYVAR}__bak     # right
+    mv $MYVAR $MYVAR__bak       # wrong
+    mv $MYVAR ${MYVAR}__bak     # right
         
 ## for loops
 
-        for i in {1..10}            # {1..10}== `seq 1 10`
-        do
-            echo "$i"
-        done
-        
-        # you can write this also in one line
-        for i in {1..10}; do echo "$i"; done
+    for i in {1..10}            # {1..10}== `seq 1 10`
+    do
+        echo "$i"
+    done
+    
+    # you can write this also in one line
+    for i in {1..10}; do echo "$i"; done
         
 ## Interpolate Command-output
 
-        OUTPUT=`command`        # can be written as
-        OUTPUT=$(command)
+    OUTPUT=`command`        # can be written as
+    OUTPUT=$(command)
         
 ## if statements
 - there have to be spaces after/before the sqzare brakets (otherwise it wont work)
 - `[[` is actual bash sytax - `[` is a program in `/usr/bin` (will also work, but with some caveats). always use `[[`
 
-        [ 3 < 4 ] && echo "true"        # no such file
-        [[ 3 < 4 ]] && echo true"       # true
+    [ 3 < 4 ] && echo "true"        # no such file
+    [[ 3 < 4 ]] && echo true"       # true
 
-        # complete example
-        if [[ "bla" = "foo" ]]; then
-            echo "this is true"
-        else
-            echo "this is false"
-        fi
+    # complete example
+    if [[ "bla" = "foo" ]]; then
+        echo "this is true"
+    else
+        echo "this is false"
+    fi
 
 - you can also use the return code of another program (and get ride of `[[` completly)
     
-        if grep peanuts food-list.txt
-        then
-            echo "found"
-        fi
+    if grep peanuts food-list.txt
+    then
+        echo "found"
+    fi
 
 ## return codes, `&&` and `||`
 Every Unix program has a "return code" which is an integer from `0` to `127` (`0` means success - everthing else is an failure). 
