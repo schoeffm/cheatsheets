@@ -2,28 +2,28 @@
 
 ## Copy image to sd-card
 
-Insert the sd-card into your card reader
+Insert the SD-card into your card reader
 
-   diskutil list                                        # in order to identify the disk
-   diskutil unmountDisk /dev/disk<# from diskutil>      # unmount the sd-card
-   sudo dd bs=1m if=image.img of=/dev/rdisk<# from diskutil>
-   diskutil unmountDisk /dev/disk<# from diskutil>      # unmound it again
+    diskutil list                                        # in order to identify the disk
+    diskutil unmountDisk /dev/disk<# from diskutil>      # unmount the SD-card
+    sudo dd bs=1m if=image.img of=/dev/rdisk<# from diskutil>   # copy everything over 
+    diskutil unmountDisk /dev/disk<# from diskutil>      # unmound it again
 
 ## Adding a user
 __Notice__: Since you'll have to type in the users password. Be sure to adjust the keyboard layout before.
 
-- `adduser schoeffm`: will create a new user 
+- `adduser schoeffm` will create a new user 
 - `adduser schoeffm sudo` will add the given user to the sudo-ers list
 
 ## Fixing SSH
 
-__Notice__: Be sure you've placed your public key into `.ssh/authorized_keys` so you can still login
+__Notice__: Be sure you've placed your public key into `~/.ssh/authorized_keys` so you can still login
 
 When starting a fresh installation SSH deamon (normally) is already up and running with default settings. Those settings will allow login using username and password. It's way more safe to restrict login to pubkey and prevent root user to login in via SSH.
 
 Edit `/etc/ssh/sshd_config` in order to change the existing configuration:
 
-- Passwort-Authentifizierung deaktivieren (damit bleibt nur die Key-Authentifizierung übrig):
+- deactivate password authentication (what's left ist pubkey authentication):
 
         # change to 'no' 
         PasswordAuthentication no  
@@ -35,11 +35,13 @@ Edit `/etc/ssh/sshd_config` in order to change the existing configuration:
         PermitRootLogin no
         StrictModes yes
 
+After saving your changes restart the ssh-deamon: 
+
+    sudo service ssh restart
+
 ## Setting up WiFi
 
-To setup your wifi edit the following file:
-
-    sudo vi /etc/wpa_supplicant/wpa_supplicant.conf
+To setup your WIFI edit the following file: `/etc/wpa_supplicant/wpa_supplicant.conf`
 
 Keep the leading lines and only add a proper `network` block.
 
@@ -56,6 +58,21 @@ Keep the leading lines and only add a proper `network` block.
 At this point, `wpa-supplicant` will normally notice a change has occurred within a few seconds, and it will try and connect to the network. If it does not, restart the interface with `sudo wpa_cli reconfigure`.
 
 __Notice__: You can add several `network`-blocks into that configuration with different `id_str` (i.e. one for home - one for work etc.)
+
+#### Create an unsecured ad-hoc network
+
+For outdoor projects you most probably don't have a nearby wifi available - thus, it's hard to connect to the Pi and configure it (i.e. setting up/starting a timelapse session).
+One solution is to configure the Pi to open an ad-hoc network (see [this blog-post for detailed explanations](https://spin.atomicobject.com/2013/04/22/raspberry-pi-wireless-communication/))
+
+__Notice__: The network is not secured - everybody can connect to it!! This should only be used for very short configuration periods (where the network is teared down afterwards).
+
+#### Create a secured access point
+
+This solution accomplishes the same but provides a real access point (with WPA2 security - see the [original blog post for details](https://frillip.com/using-your-raspberry-pi-3-as-a-wifi-access-point-with-hostapd/)).
+
+Edit this file so the deamon uses our configuration: `/etc/default/hostapd`
+
+    DAEMON_CONF="/etc/hostapd/hostapd.conf"
 
 ## SSH over USB
 
