@@ -16,6 +16,18 @@ __Notice__: Since you'll have to type in the users password. Be sure to adjust t
 - `adduser schoeffm sudo` will add the given user to the sudo-ers list
 - `usermod -a -G video schoeffm` in order to be in the `raspistill` group
 
+## Activate SSH (headless setup)
+
+You will need to have your SD card connected to your computer:
+
+Create an empty file in the root of the SD card named `ssh` (without dot or extension).
+
+This will enable ssh on your Raspberry Pi so you will be able to connect next time you plug in the Raspberry Pi. After booting you can connect with:
+
+    ssh pi@raspberrypi
+
+The default-username is `pi` and its default-password is `raspberry`
+
 ## Fixing SSH
 
 __Notice__: Be sure you've placed your public key into `~/.ssh/authorized_keys` so you can still login
