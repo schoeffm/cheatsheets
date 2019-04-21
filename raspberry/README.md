@@ -81,6 +81,13 @@ After saving your changes restart the ssh-deamon:
 
 
 ## Setting up WiFi
+
+### Measrue Wifi Signal Strengh
+
+In order to list all wifi signals your raspberry receives (and show the signal strength) issue this:
+
+     sudo iwlist wlan0 scan | egrep "Cell|ESSID|Signal|Rates"
+     
 ### Setup Wifi initially (headless)
 
 After setting up the OS-image on the SD-card 
@@ -263,6 +270,7 @@ Finally, restart the service:
 
     sudo service hostapd restart
     sudo service hostapd status
+
 
 ## SSH over USB
 
