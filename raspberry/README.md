@@ -15,6 +15,7 @@ __Notice__: Since you'll have to type in the users password. Be sure to adjust t
 - `adduser schoeffm` will create a new user 
 - `adduser schoeffm sudo` will add the given user to the sudo-ers list
 - `usermod -a -G video schoeffm` in order to be in the `raspistill` group
+-  use `sudo visudo` and add `schoeffm ALL=(ALL) NOPASSWD: ALL` to allow sudo without password
 
 ## Activate SSH (headless setup)
 
