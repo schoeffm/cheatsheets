@@ -215,7 +215,7 @@ __Notice__: DHCP is working the same way as with an ad-hoc network - so copy the
 
 ##### Setup hostapd
 
-Create/edit `/etc/hostadp/hostadp.conf` with the following content:
+Create/edit `/etc/hostapd/hostapd.conf` with the following content:
 
     # This is the name of the WiFi interface we configured above
     interface=wlan0
